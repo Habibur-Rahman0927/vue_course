@@ -28,6 +28,10 @@
         <input type="text" name="" id="" />
         <button type="submit">SingUP</button>
       </form>
+      <br />
+      <input type="text" name="" id="" v-model="newName" />
+      <p>Your Name {{newName}}</p>
+      <p>{{outputFullName()}}</p>
     </section>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="./app.js"></script>

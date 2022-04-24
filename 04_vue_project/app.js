@@ -4,6 +4,7 @@ const app = Vue.createApp({
       counter: 10,
       name: "",
       confirmName: "",
+      newName: "",
     };
   },
   methods: {
@@ -22,6 +23,13 @@ const app = Vue.createApp({
     submitForm(e) {},
     confirmedName() {
       this.confirmName = this.name;
+    },
+
+    outputFullName() {
+      if (this.newName === "") {
+        return "";
+      }
+      return this.name + " " + "Habibur";
     },
   },
 });
