@@ -11,6 +11,7 @@
       <h2>Events In Action</h2>
       <button v-on:click="increments()">Add</button>
       <button @click="decrements()">Remove</button>
+      <p v-once>Result: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
 
       <input
@@ -19,8 +20,14 @@
         name=""
         id=""
         value=""
+        v-on:keyup.enter="confirmedName"
       />
-      <p>{{name}}</p>
+      <p>{{confirmName}}</p>
+
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" name="" id="" />
+        <button type="submit">SingUP</button>
+      </form>
     </section>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="./app.js"></script>
