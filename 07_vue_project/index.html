@@ -24,9 +24,14 @@
       ></div>
       <div
         class="demo"
-        :class="{active: boxCSelected}"
+        :class="[demo, boxCClasses]"
         :style="{'borderColor': boxCSelected ? 'red' : ''}"
         @click="boxSelected('C')"
+      ></div>
+      <div
+        :class="['demo', { active: boxDSelected}]"
+        :style="{'borderColor': boxDSelected ? 'red' : ''}"
+        @click="boxSelected('D')"
       ></div>
     </section>
     <script src="https://unpkg.com/vue@next"></script>
