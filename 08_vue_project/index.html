@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue</title>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Course Goal</h1>
+    </header>
+    <section id="app">
+      <input type="text" v-model="enteredGoalValue" name="" id="" />
+      <button @click="addGoal">Add Goal</button>
+      <p v-if="goals.length === 0">
+        No goals have been added yet -please start adding some!
+      </p>
+      <ul v-if="goals.length > 0" v-show="taskListIsVisible">
+        <li
+          v-for="(goal, index) in goals"
+          key="index"
+          @click="removeGoal(index)"
+        >
+          <p>{{goal}}</p>
+          <input type="text" @click.stop name="" id="" />
+        </li>
+      </ul>
+      <button @click="toggle" v-if="goals.length > 0">{{buttonCaption}}</button>
+      <!-- <ul>
+        <li v-for="(value, key, index) in {name: 'Max', age: 21}">
+          {{value}} || {{key}} || {{index}}
+        </li>
+      </ul> -->
+    </section>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
