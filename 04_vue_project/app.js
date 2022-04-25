@@ -7,6 +7,15 @@ const app = Vue.createApp({
       newName: "",
     };
   },
+  computed: {
+    fullname() {
+      console.log("run");
+      if (this.newName === "") {
+        return "";
+      }
+      return this.name + " " + "Habibur";
+    },
+  },
   methods: {
     increments() {
       return this.counter++;
@@ -26,6 +35,7 @@ const app = Vue.createApp({
     },
 
     outputFullName() {
+      console.log("runing");
       if (this.newName === "") {
         return "";
       }
