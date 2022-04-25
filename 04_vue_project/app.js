@@ -5,7 +5,20 @@ const app = Vue.createApp({
       name: "",
       confirmName: "",
       newName: "",
+      newFullName: "",
     };
+  },
+  watch: {
+    name(value) {
+      this.newFullName = value + " " + "Habibur Rahman";
+    },
+    counter(value) {
+      if (value > 15) {
+        setTimeout(() => {
+          this.counter = 0;
+        }, 2000);
+      }
+    },
   },
   computed: {
     fullname() {
