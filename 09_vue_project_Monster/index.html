@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Monster</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Monster Game</h1>
+    </header>
+
+    <div id="game">
+      <section id="monster" class="container">
+        <h2>Monster Health</h2>
+        <div class="healthbar">
+          <div class="healthbar_value" :style="monsterBarStyles"></div>
+        </div>
+      </section>
+      <section id="player" class="container">
+        <h2>Your Health</h2>
+        <div class="healthbar">
+          <div class="healthbar_value" :style="playerBarStyles"></div>
+        </div>
+      </section>
+
+      <section id="controls">
+        <button @click="attackMonster">Attack</button>
+        <button>Special Attack</button>
+        <button>Heal</button>
+        <button>Surrander</button>
+      </section>
+      <section id="log" class="container">
+        <h2>Battle Log</h2>
+        <ul>
+          <li></li>
+        </ul>
+      </section>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

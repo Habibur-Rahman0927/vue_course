@@ -1,0 +1,11 @@
+.healthbar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background-color: royalblue;
+}
+.healthbar_value {
+  height: 15px;
+  background-color: brown;
+}
