@@ -1,11 +1,12 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <FriendComponent
-    name="Rockstar"
-    phone="01221"
-    email="haibn"
-    is_fevorite="1"
-    friends
+    v-for="friend in friends"
+    :key="friend.id"
+    :name="friend.name"
+    :phone="friend.phone"
+    :email="friend.email"
+    :is_fevorite="true"
   />
   <!-- <friend-contact /> -->
 </template>
@@ -21,11 +22,13 @@ export default {
           id: "manuel",
           name: "Manuel Lorenx",
           phone: "0298948930",
+          email: "hibur@gmail.com",
         },
         {
           id: "manuel",
           name: "Manuel Lorenx",
           phone: "0298948930",
+          email: "hibur@gmail.com",
         },
       ],
     };
