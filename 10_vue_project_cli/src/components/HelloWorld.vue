@@ -13,6 +13,7 @@
 
         <li><strong>name: </strong>{{ name }}</li>
       </ul>
+      <button @click="$emit('deleteInfo', id)">Delete</button>
     </li>
   </div>
 </template>
@@ -30,7 +31,7 @@ export default {
       default: false,
     },
   },
-  emits: ["toggle-favorite"],
+  emits: ["toggle-favorite", "deleteInfo"],
   // emits: {
   //   "toggle-favorite": function (id) {
   //     if (id) {
@@ -62,6 +63,9 @@ export default {
       // this.friendIsFevorite = !this.friendIsFevorite;
       this.$emit("toggle-favorite", this.id);
     },
+    // DeleteEvents() {
+    //   this.$emit("deleteInfo", this.id);
+    // },
   },
 };
 </script>
