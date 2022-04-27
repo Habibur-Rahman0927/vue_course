@@ -1,9 +1,10 @@
 <template>
   <base-card>
-    <div>
+    <!-- <template v-slot:div> -->
+    <template #div>
       <h3>{{ fullName }}</h3>
       <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
-    </div>
+    </template>
     <p>{{ infoText }}</p>
   </base-card>
 </template>
@@ -16,10 +17,4 @@ export default {
 };
 </script>
 
-<style scoped>
-section div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>
+<style scoped></style>
