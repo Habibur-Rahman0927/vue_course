@@ -6,6 +6,7 @@
       :title="storeResource.title"
       :description="storeResource.description"
       :link="storeResource.link"
+      :id="storeResource.id"
     />
   </ul>
 </template>
