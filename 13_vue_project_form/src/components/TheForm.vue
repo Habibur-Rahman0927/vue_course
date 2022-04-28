@@ -1,8 +1,18 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-control">
+    <div
+      class="form-control"
+      :class="{ invalid: userNameValidity === 'invalid' }"
+    >
       <label for="user-name">Your Name</label>
-      <input id="user-name" name="user-name" v-model="userName" type="text" />
+      <input
+        id="user-name"
+        name="user-name"
+        v-model.trim="userName"
+        type="text"
+        @blur="validateUserInput"
+      />
+      <p v-if="userNameValidity === 'invalid'">Please Enter a valid name</p>
     </div>
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
@@ -108,6 +118,7 @@ export default {
       checkBox: [],
       radioBtn: null,
       checking: false,
+      userNameValidity: "pending",
     };
   },
 
@@ -126,6 +137,13 @@ export default {
       console.log(this.checking);
       this.checking = false;
     },
+    validateUserInput() {
+      if (this.userName === "") {
+        this.userNameValidity = "invalid";
+      } else {
+        this.userNameValidity = "valid";
+      }
+    },
   },
 };
 </script>
@@ -143,6 +161,13 @@ form {
   margin: 0.5rem 0;
 }
 
+.form-control.invalid input {
+  border-color: red;
+}
+
+.form-control.invalid label {
+  color: red;
+}
 label {
   font-weight: bold;
 }
