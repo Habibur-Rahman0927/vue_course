@@ -7,7 +7,7 @@ import RequestReceive from "../pages/requests/RequestReceive.vue";
 import NotFound from "../pages/NotFound.vue";
 
 const routes = [
-  { path: "/", component: "/coaches" },
+  { path: "/", redirect: "/coaches" },
   { path: "/coaches", component: CoachesList },
   {
     path: "/coaches/:id",
