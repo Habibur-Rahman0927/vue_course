@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     counter() {
-      return this.$store.state.counter;
+      return this.$store.state.counterModule.counter;
     },
     isAuth() {
       return this.$store.getters.userIsAuthenticated;
